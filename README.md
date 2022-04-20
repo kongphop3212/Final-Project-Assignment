@@ -16,8 +16,8 @@ classDiagram
   -Save As():void
   }
   class Form1{
-  +Add
-  +Save As
+  -Add
+  -Save As
   +id() : string
   +titlename() : string
   +name() : string
