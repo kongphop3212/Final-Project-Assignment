@@ -13,6 +13,7 @@ classDiagram
   class Form1{
   -Add()
   -Save As()
+  }
   class List{
   selectedRow:int
   -Add():void
