@@ -11,9 +11,9 @@ classDiagram
   List <|--Form1
   direction LR
   class List{
-  +selectedRow:int
-  +Add():void
-  +Save As():void
+  selectedRow:int
+  -Add():void
+  -Save As():void
   }
   class Form1{
   +Add
