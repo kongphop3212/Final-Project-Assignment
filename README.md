@@ -25,5 +25,6 @@ classDiagram
   +date() : string
   +time() : string
   +inout() : string
-
+  }
+```
   
