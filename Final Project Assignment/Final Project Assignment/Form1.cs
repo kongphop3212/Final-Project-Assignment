@@ -46,9 +46,8 @@ namespace Final_Project_Assignment
             String[] row = {id, titlename, name, surname, date, time, inout};
             dataGridView1.Rows.Add(row);
         }
-        private void buttonSave_Click_1(object sender, EventArgs e)
+        private void buttonAdd_Click_1(object sender, EventArgs e)
         {
-            //dataGridView1.Rows.Add(textId.Text, textName.Text, textSurname.Text);
             addRow(textId.Text, comboBoxTitleName.Text, textName.Text, textSurname.Text, dateTimeDate.Text, dateTimeTime.Text, comboBoxInandOut.Text);
         }
 
@@ -61,27 +60,31 @@ namespace Final_Project_Assignment
                 bool fileError = false;
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    if (!fileError)
                     {
-                        int columnCount = dataGridView1.Columns.Count;
-                        string columnNames = "";
-                        string[] outputCSV = new string[dataGridView1.Rows.Count + 1];
-                        for (int i = 0; i < columnCount; i++)
+                        try
                         {
-                            columnNames += dataGridView1.Columns[i].HeaderText.ToString() + ",";
-                        }
-                        for (int i = 1; (i - 1) < dataGridView1.Rows.Count; i++)
-                        {
-                            for (int j = 0; j < columnCount; j++)
+                            int columnCount = dataGridView1.Columns.Count;
+                            string columnNames = "";
+                            string[] outputCSV = new string[dataGridView1.Rows.Count + 1];
+                            for (int i = 0; i < columnCount; i++)
                             {
-                                outputCSV[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                                columnNames += dataGridView1.Columns[i].HeaderText.ToString() + ",";
                             }
+                            outputCSV[0] += columnNames;
+                            for (int i = 1; (i - 1) < dataGridView1.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < columnCount; j++)
+                                {
+                                    outputCSV[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                                }
+                            }
+                            File.WriteAllLines(saveFileDialog.FileName, outputCSV, Encoding.UTF8);
                         }
-                        File.WriteAllLines(saveFileDialog.FileName, outputCSV, Encoding.UTF8);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erorr :" + ex.Message);
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erorr :" + ex.Message);
+                        }
                     }
                 }
             }

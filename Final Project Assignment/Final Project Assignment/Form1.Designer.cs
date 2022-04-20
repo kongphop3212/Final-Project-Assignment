@@ -55,7 +55,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -64,6 +64,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -78,6 +80,7 @@
             this.ColumnInandOut});
             this.dataGridView1.Location = new System.Drawing.Point(257, 39);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(748, 353);
             this.dataGridView1.TabIndex = 0;
@@ -86,36 +89,43 @@
             // 
             this.ColumnId.HeaderText = "ID";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnTitleName
             // 
             this.ColumnTitleName.HeaderText = "Title Name";
             this.ColumnTitleName.Name = "ColumnTitleName";
+            this.ColumnTitleName.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Name";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // ColumnSurname
             // 
             this.ColumnSurname.HeaderText = "Surname";
             this.ColumnSurname.Name = "ColumnSurname";
+            this.ColumnSurname.ReadOnly = true;
             // 
             // ColumnDate
             // 
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
             // 
             // ColumnTime
             // 
             this.ColumnTime.HeaderText = "Time";
             this.ColumnTime.Name = "ColumnTime";
+            this.ColumnTime.ReadOnly = true;
             // 
             // ColumnInandOut
             // 
             this.ColumnInandOut.HeaderText = "In and Out";
             this.ColumnInandOut.Name = "ColumnInandOut";
+            this.ColumnInandOut.ReadOnly = true;
             // 
             // label1
             // 
@@ -265,25 +275,25 @@
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "Save";
+            this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // buttonSave
+            // buttonAdd
             // 
-            this.buttonSave.Location = new System.Drawing.Point(53, 292);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(134, 55);
-            this.buttonSave.TabIndex = 21;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click_1);
+            this.buttonAdd.Location = new System.Drawing.Point(53, 292);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(134, 55);
+            this.buttonAdd.TabIndex = 21;
+            this.buttonAdd.Text = "ADD";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 405);
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.comboBoxInandOut);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimeTime);
@@ -339,7 +349,7 @@
         private DataGridViewTextBoxColumn ColumnInandOut;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private Button buttonSave;
+        private Button buttonAdd;
         private ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
