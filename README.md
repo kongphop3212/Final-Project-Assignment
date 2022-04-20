@@ -6,3 +6,24 @@
 เพื่อพัฒนาระบบและอประเมินประสิทธิภาพเช็คชื่อผู้คนเข้าออก
 
 # Class Diagram
+```mermaid
+classDiagram
+  List <|--form1
+  direction LR
+  class List{
+  List : +selectedRow:int
+  +Add():void
+  +Save As():void
+  }
+  class form1{
+  form1 : +Add
+  form1 : +Save
+  +id() : string
+  +titlename() : string
+  +name() : string
+  +surname() : string
+  +date() : string
+  +time() : string
+  +inout() : string
+
+  
