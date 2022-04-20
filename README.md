@@ -8,7 +8,7 @@
 # Class Diagram
 ```mermaid
 classDiagram
-  List <|--form1
+  List <|--Form1
   direction LR
   class List{
   +selectedRow:int
