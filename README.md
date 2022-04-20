@@ -11,13 +11,13 @@ classDiagram
   List <|--form1
   direction LR
   class List{
-  List : +selectedRow:int
+  +selectedRow:int
   +Add():void
   +Save As():void
   }
-  class form1{
-  form1 : +Add
-  form1 : +Save
+  class Form1{
+  +Add
+  +Save
   +id() : string
   +titlename() : string
   +name() : string
