@@ -10,10 +10,6 @@
 classDiagram
   List <|--Form1
   direction LR
-  class Form1{
-  -Add()
-  -Save As()
-  }
   class List{
   selectedRow:int
   -Add():void
